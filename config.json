@@ -4,7 +4,7 @@
         "name": "kyverno",
         "domain": "dev.failk8s.com",
         "displayName": "Kyverno",
-        "version": "development"
+        "version": "1.9.2"
     },
     "packages": []
 }
