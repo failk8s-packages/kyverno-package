@@ -6,10 +6,10 @@ metadata:
     kbld.k14s.io/images: |
       - origins:
         - resolved:
-            tag: 1.9.2
-            url: quay.io/failk8s/kyverno-package:1.9.2
+            tag: development
+            url: quay.io/failk8s/kyverno-package:development
         url: quay.io/failk8s/kyverno-package@sha256:50938ebc9382df86e72f04665d753426e4d0cdcb30450e61e8dfdc2acd2360ba
-  name: kyverno.dev.failk8s.com.1.9.2
+  name: kyverno.dev.failk8s.com.development
 spec:
   refName: kyverno.dev.failk8s.com
   template:
@@ -29,4 +29,4 @@ spec:
           paths:
           - '-'
           - .imgpkg/images.yml
-  version: 1.9.2
+  version: development

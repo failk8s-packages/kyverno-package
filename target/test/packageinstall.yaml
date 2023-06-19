@@ -8,7 +8,7 @@ spec:
   packageRef:
     refName: kyverno.dev.failk8s.com
     versionSelection:
-      constraints: 1.9.2
+      constraints: development
       prereleases: {}
   values:
   - secretRef:
