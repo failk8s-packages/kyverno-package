@@ -1,0 +1,15 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: kyverno
+  namespace: kyverno-package
+spec:
+  serviceAccountName: kyverno
+  packageRef:
+    refName: kyverno.dev.failk8s.com
+    versionSelection:
+      constraints: development
+      prereleases: {}
+  values:
+  - secretRef:
+      name: kyverno

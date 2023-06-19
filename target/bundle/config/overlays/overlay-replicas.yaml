@@ -1,0 +1,10 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@ if hasattr(data.values, "replicaCount") and data.values.replicaCount:
+#@overlay/match by=overlay.subset({"kind": "Deployment", "metadata": {"name": "kyverno", "namespace": "kyverno"}})
+---
+spec:
+  #@overlay/match missing_ok=True
+  replicas: #@ data.values.replicaCount
+#@ end

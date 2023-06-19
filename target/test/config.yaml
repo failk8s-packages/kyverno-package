@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kyverno
+  namespace: kyverno-package
+stringData:
+  values.yml: null
