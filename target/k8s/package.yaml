@@ -1,26 +1,15 @@
----
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  annotations:
-    kbld.k14s.io/images: |
-      - origins:
-        - resolved:
-            tag: development
-            url: quay.io/failk8s/kyverno-package:development
-        url: quay.io/failk8s/kyverno-package@sha256:50938ebc9382df86e72f04665d753426e4d0cdcb30450e61e8dfdc2acd2360ba
-  name: kyverno.dev.failk8s.com.development
+  name: kyverno.dev.failk8s.com.0.0.0+develop
 spec:
   refName: kyverno.dev.failk8s.com
+  version: 0.0.0+develop
   template:
     spec:
-      deploy:
-      - kapp:
-          rawOptions:
-          - --wait-timeout=5m
       fetch:
       - imgpkgBundle:
-          image: quay.io/failk8s/kyverno-package@sha256:50938ebc9382df86e72f04665d753426e4d0cdcb30450e61e8dfdc2acd2360ba
+          image: quay.io/failk8s/kyverno-package:develop
       template:
       - ytt:
           paths:
@@ -29,4 +18,7 @@ spec:
           paths:
           - '-'
           - .imgpkg/images.yml
-  version: development
+      deploy:
+      - kapp:
+          rawOptions:
+          - --wait-timeout=5m
